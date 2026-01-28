@@ -4,7 +4,7 @@ Author Name
 
 == Project Overview
 
-This project is for Test Automation Assignment with Playwright/TypeScript for a demo website XYZBank web application
+This project is for Test Automation Assignment with Playwright/TypeScript for a demo website XYZBank web application.
 In addition to regular TypeScript files, the project have a sample for feature file with Cucumber for Behavior-Driven Development (BDD) style acceptance tests.
 
 It includes:
