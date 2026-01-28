@@ -4,7 +4,10 @@ Author Name
 
 == Project Overview
 
-This project automates the testing of the XYZBank web application using Playwright for end-to-end browser automation and Cucumber for Behavior-Driven Development (BDD) style acceptance tests. It includes:
+This project is for Test Automation Assignment with Playwright/TypeScript for a demo website XYZBank web application
+In addition to regular TypeScript files, the project have a sample for feature file with Cucumber for Behavior-Driven Development (BDD) style acceptance tests.
+
+It includes:
 
 * Playwright test suites for UI functionality
 * Cucumber feature files for BDD scenarios
@@ -24,21 +27,12 @@ PLAYWRIGHTPROJECT/
     ├── reports/                 # Generated test reports (HTML, screenshots, traces)
     ├── cucumber.js              # Cucumber configuration
     ├── playwright.config.ts     # Playwright configuration
-    ├── package.json             # NPM scripts and dependencies
+    ├── package.json             # NPM scripts and dependencies and Scripts for CI/CD integration
     └── ReadMe.adoc              # Project documentation (this file)
 ----
 
-== Prerequisites
-
-* Node.js (v16+ recommended)
-* npm or yarn package manager
-
-== Installation
-
-[source,bash]
-----
-npm install
-----
+== Tags:
+Tags are provided in "Testfiles(.spec.ts)" and ".feature" files for selective test execution and test suite categorization (smoke, regression, funtionalTests, negativeTests, customerOnly, managerOnly, etc.).
 
 == Test Execution Scripts
 
@@ -93,19 +87,9 @@ npx playwright show-trace traces/<trace-file>.zip
 * Step definitions are located in `features/step_definitions/`
 * Hooks (setup and teardown) are in `features/hooks/`
 * Feature files (`*.feature`) are stored directly under `features/`
+* TypeScript test files(*.spec.ts) are stored in 'tests/' 
 * Test data JSON files are under `testdataUtils/`
-
-== Additional Notes
-
-* The project uses `ts-node` to run TypeScript files directly with Cucumber.
-* JSON test data imports are configured using `resolveJsonModule` in `tsconfig.json`.
-* Playwright context and browser are managed per scenario in hooks to ensure isolation.
-* Test retries and parallel execution improve stability and speed.
-
-== How to Contribute
-
-Please fork the repository and submit pull requests for enhancements or fixes. Follow the existing code style and write tests for new features.
 
 == Contact
 
-Jasvindar Singh
+Jasvindar Singh (contact.jasvindar@gmail.com)
