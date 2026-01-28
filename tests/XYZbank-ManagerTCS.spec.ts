@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
     await managerFlow.submitCustomerAndHandleAlert('Customer added successfully with customer id :');
 });
 
-test.describe('@managerOnly @smoke @createCustomerOnly', () => {
+test.describe('@managerOnly @smoke @createCustomer', () => {
     test('Create a customer',async ({page})=>
     {
         const managerFlow = new ManagerFlow(page);

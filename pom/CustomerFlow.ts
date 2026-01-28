@@ -64,7 +64,9 @@ async performDeposit(amount:number)
     await this.amountTextBox.fill(amount.toString());
     await this.depositAmountButton.click();
     await expect(this.depositConfirmationMessage).toContainText('Deposit Successful');
-    await this.page.waitForTimeout(2000);           //wait for account balance to update
+
+    await this.page.waitForTimeout(2000);  //wait for 2 seconds to get updated balance
+    //await this.page.reload();         //refresh the page to get updated balance
     const UpdatedAccountBalance = await this.accountBalance.textContent();
     return UpdatedAccountBalance;
 
