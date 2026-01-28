@@ -1,0 +1,111 @@
+= XYZBank Automation Project
+Author Name
+2026-01-28
+
+== Project Overview
+
+This project automates the testing of the XYZBank web application using Playwright for end-to-end browser automation and Cucumber for Behavior-Driven Development (BDD) style acceptance tests. It includes:
+
+* Playwright test suites for UI functionality
+* Cucumber feature files for BDD scenarios
+* Page Object Model (POM) design pattern for maintainability
+* Parallel execution and retry mechanisms for stability
+
+== Project Structure
+
+[source, tree]
+----
+PLAYWRIGHTPROJECT/
+└── XYZBank/
+    ├── features/                # Cucumber feature files, hooks, and step definitions
+    ├── pom/                     # Page Object Model classes
+    ├── tests/                   # Playwright test specs
+    ├── testdataUtils/           # JSON test data files
+    ├── reports/                 # Generated test reports (HTML, screenshots, traces)
+    ├── cucumber.js              # Cucumber configuration
+    ├── playwright.config.ts     # Playwright configuration
+    ├── package.json             # NPM scripts and dependencies
+    └── ReadMe.adoc              # Project documentation (this file)
+----
+
+== Prerequisites
+
+* Node.js (v16+ recommended)
+* npm or yarn package manager
+
+== Installation
+
+[source,bash]
+----
+npm install
+----
+
+== Test Execution Scripts
+
+The following NPM scripts are available for executing various test suites and generating reports:
+
+[options="header",cols="1,3,6"]
+|===
+| Script Name            | Command                                            | Description
+
+| fullRegression         | `npm run fullRegression`                           | Runs the entire Playwright test suite (all tests and browsers)
+
+| customerTestsChromium  | `npm run customerTestsChromium`                    | Runs only tests tagged with `@customerOnly` on Chromium browser
+
+| managerTests           | `npm run managerTests`                             | Runs only tests tagged with `@managerOnly`
+
+| negativeTests          | `npm run negativeTests`                            | Runs tests tagged with `@negative` to validate negative scenarios
+
+| smokeTestsChromium     | `npm run smokeTestsChromium`                       | Runs smoke tests tagged with `@smoke` on Chromium
+
+| customerTestsFirefox   | `npm run customerTestsFirefox`                     | Runs `@customerOnly` tests on Firefox browser
+
+| cucumberRegression     | `npm run cucumberRegression`                       | Executes Cucumber BDD tests in parallel with retries and generates an HTML report at `cucumber-report.html`
+
+|===
+
+== Viewing Test Reports
+
+* Playwright reports (HTML, screenshots, traces) will be generated in the `playwright-report/` directory by default.
+* Cucumber HTML report is generated as `cucumber-report.html` in the project root after running `cucumberRegression`.
+* Open reports in your browser:
+
+[source,bash]
+----
+open cucumber-report.html    # macOS
+start cucumber-report.html   # Windows
+xdg-open cucumber-report.html # Linux
+----
+
+== Screenshots and Traces
+
+* Screenshots of failed tests are saved under `screenshots/` folder.
+* Playwright trace files (`.zip`) for failed scenarios are saved under `traces/` folder.
+* To view traces, run:
+
+[source,bash]
+----
+npx playwright show-trace traces/<trace-file>.zip
+----
+
+== Folder and File Naming Conventions
+
+* Step definitions are located in `features/step_definitions/`
+* Hooks (setup and teardown) are in `features/hooks/`
+* Feature files (`*.feature`) are stored directly under `features/`
+* Test data JSON files are under `testdataUtils/`
+
+== Additional Notes
+
+* The project uses `ts-node` to run TypeScript files directly with Cucumber.
+* JSON test data imports are configured using `resolveJsonModule` in `tsconfig.json`.
+* Playwright context and browser are managed per scenario in hooks to ensure isolation.
+* Test retries and parallel execution improve stability and speed.
+
+== How to Contribute
+
+Please fork the repository and submit pull requests for enhancements or fixes. Follow the existing code style and write tests for new features.
+
+== Contact
+
+Jasvindar Singh

@@ -1,0 +1,9 @@
+{
+    "devEnvURL": "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
+    "firstName": "Joanne",
+    "lastName": "Rowling",
+    "postCode": "EH10 4BF",
+    "amount": 100,
+    "currency": "Dollar",
+    "transactionType": "Credit"
+}

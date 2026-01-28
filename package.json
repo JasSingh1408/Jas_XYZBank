@@ -1,0 +1,29 @@
+{
+  "name": "xyzbank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "fullRegression": "npx playwright test",
+    "customerTestsChromium": "npx playwright test --grep @customerOnly --project=chromium",
+    "managerTests": "npx playwright test --grep @managerOnly",
+    "negativeTests": "npx playwright test --grep @negative",
+    "smokeTestsChromium": "npx playwright test --grep @smoke --project=chromium",
+    "customerTestsFirefox": "npx playwright test --grep @customerOnly --project=firefox",
+    "cucumberRegression": "npx cucumber-js features/*.feature --parallel 2 --retry 1 --exit --format html:cucumber-report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.10",
+    "dotenv": "^17.2.3",
+    "ts-node": "^10.9.2"
+  }
+}
