@@ -20,9 +20,9 @@ It includes:
 ----
 PLAYWRIGHTPROJECT/
 └── XYZBank/
-    ├── features/                # Cucumber feature files, hooks, and step definitions
+    ├── features/                # Cucumber feature files (`*.feature`), hooks, and step definitions
     ├── pom/                     # Page Object Model classes
-    ├── tests/                   # Playwright test specs
+    ├── tests/                   # Playwright test specs (*.spec.ts)
     ├── testdataUtils/           # JSON test data files
     ├── reports/                 # Generated test reports (HTML, screenshots, traces)
     ├── cucumber.js              # Cucumber configuration
@@ -82,14 +82,6 @@ xdg-open cucumber-report.html # Linux
 npx playwright show-trace traces/<trace-file>.zip
 ----
 
-== Folder and File Naming Conventions
-
-* Step definitions are located in `features/step_definitions/`
-* Hooks (setup and teardown) are in `features/hooks/`
-* Feature files (`*.feature`) are stored directly under `features/`
-* TypeScript test files(*.spec.ts) are stored in 'tests/' 
-* Test data JSON files are under `testdataUtils/`
-
-== Contact
+== Contact for any clarifications
 
 Jasvindar Singh (contact.jasvindar@gmail.com)
